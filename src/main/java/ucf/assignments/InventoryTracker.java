@@ -5,6 +5,15 @@
 
 package ucf.assignments;
 
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.util.Objects;
+
 /*
 Using IntelliJ and Gradle, you will create a GUI-based desktop application to allow a user to track their personal inventory.
 
@@ -55,5 +64,24 @@ Bonus Credit
 The requirement to save/load an inventory list in JSON format is optional. Implementation of this requirement will yield
 an extra 2 points on this assignment.
  */
-public class InventoryTracker {
+public class InventoryTracker extends Application {
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+    @Override
+    public void start(Stage primaryStage) {
+        try {
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainWindow.fxml")));
+
+            Scene scene = new Scene(root);
+
+            primaryStage.setScene(scene);
+            primaryStage.setTitle("Inventory Tracker");
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

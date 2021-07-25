@@ -11,6 +11,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 
 public class MainWindowController {
@@ -49,16 +50,21 @@ public class MainWindowController {
         filetype = FileChooser.getType();
 
         if(filetype == 'CSV') {
-            saveAsCSV(filename + filetype);
+            FileManager.saveAsCSV(filename + filetype);
+        }else if(filetype == 'HTML') {
+            FileManager.saveAsHTML(filename + filetype);
+        }else if(filetype == 'JSON') {
+            FileManager.saveAsJSON(filename + filetype);
         }
     }
 
-    public void saveAsCSV(String filename) {
-        /*
-        open up filename
-        for each item in the item model
-            write the item to file as sn,name,price
-        close file
-         */
+
+    public void addNewItemButtonClicked(javafx.event.ActionEvent actionEvent) {
+    }
+
+    public void editSelectedItemButtonClicked(javafx.event.ActionEvent actionEvent) {
+    }
+
+    public void deleteSelectedItemButtonClicked(javafx.event.ActionEvent actionEvent) {
     }
 }
