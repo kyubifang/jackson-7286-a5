@@ -13,28 +13,27 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.MainWindowController">
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.MainWindowController">
    <top>
-      <MenuBar BorderPane.alignment="CENTER">
+      <MenuBar fx:id="menuBar" BorderPane.alignment="CENTER">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu fx:id="fileMenu" mnemonicParsing="false" text="File">
             <items>
-                  <MenuItem mnemonicParsing="false" text="Save" />
-                  <MenuItem mnemonicParsing="false" text="Save As..." />
-                  <MenuItem mnemonicParsing="false" text="Load..." />
-                  <SeparatorMenuItem mnemonicParsing="false" />
-              <MenuItem mnemonicParsing="false" text="Close" />
+                  <MenuItem fx:id="saveMenuItem" mnemonicParsing="false" onAction="#saveButtonClicked" text="Save" />
+                  <MenuItem fx:id="saveAsMenuItem" mnemonicParsing="false" onAction="#saveAsButtonClicked" text="Save As..." />
+                  <MenuItem fx:id="loadMenuItem" mnemonicParsing="false" onAction="#loadButtonClicked" text="Load..." />
+                  <SeparatorMenuItem fx:id="separatorMenuItem" mnemonicParsing="false" />
+              <MenuItem fx:id="closeMenuItem" mnemonicParsing="false" onAction="#closeButtonClicked" text="Close" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Find">
+          <Menu fx:id="findMenu" mnemonicParsing="false" text="Find">
             <items>
-              <MenuItem mnemonicParsing="false" text="Search..." />
+              <MenuItem fx:id="searchMenuItem" mnemonicParsing="false" onAction="#searchButtonClicked" text="Search..." />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Help">
+          <Menu fx:id="helpMenu" mnemonicParsing="false" text="Help">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" onAction="#aboutButtonClicked" text="About" />
             </items>
           </Menu>
         </menus>
